@@ -1,19 +1,25 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <tab-component></tab-component>
+    <hr />
+    <sibling-component :age="21"></sibling-component>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import TabComponent from "./components/tabComponent.vue";
+import SiblingComponent from "./components/SiblingComponent.vue";
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    TabComponent,
+    SiblingComponent,
+  },
+  provide: {
+    courseName: "Vue JS: The Complete Guide",
+    courseAuthor: "Max Schwazmuller",
+  },
+};
 </script>
 
 <style>
@@ -23,6 +29,9 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+body {
+  margin: 0;
+  padding: 0;
 }
 </style>
