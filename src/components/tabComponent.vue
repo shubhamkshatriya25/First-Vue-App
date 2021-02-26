@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <header>
-      <h1>{{ courseName }}</h1>
+      <h1>{{ courseName | uppercase }}</h1>
       <h4>by {{ courseAuthor }}</h4>
-      <p>TabComponent age: {{ age }}</p>
+      <p v-customise.delayed="'yellow'">TabComponent age: {{ age }}</p>
     </header>
     <h3>My Vue JS learning so far...</h3>
     <button @click="toggleTab('completed-section')" class="tab-button ">

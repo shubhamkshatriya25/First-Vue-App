@@ -3,17 +3,21 @@
     <tab-component></tab-component>
     <hr />
     <sibling-component :age="21"></sibling-component>
+    <mixin-component :level="'2'"> </mixin-component>
   </div>
 </template>
 
 <script>
 import TabComponent from "./components/tabComponent.vue";
 import SiblingComponent from "./components/SiblingComponent.vue";
+import MixinComponent from "./components/MixinComponent.vue";
+
 export default {
   name: "App",
   components: {
     TabComponent,
     SiblingComponent,
+    MixinComponent,
   },
   provide: {
     courseName: "Vue JS: The Complete Guide",

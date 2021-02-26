@@ -7,10 +7,12 @@
     <br />
     <br />
     <input
+      v-focus
       type="text"
       v-model="enteredValue"
       placeholder="Enter a completed course"
     />
+
     <br />
     <button @click="$emit('add-topic', enteredValue)" class="tab-button">
       Add
@@ -26,6 +28,14 @@
 import { eventBus } from "../main";
 
 export default {
+  directives: {
+    focus: {
+      // directive definition
+      inserted: function(el) {
+        el.focus();
+      },
+    },
+  },
   data() {
     return {
       enteredValue: "",
